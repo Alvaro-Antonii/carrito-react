@@ -11,7 +11,7 @@ export function Prod() {
     array = productos;
     const lisProd = productos.map((p)=>{
       return <Card img={p.image} title={p.title} 
-      description={p.price} ele={p.id}/>
+      price={p.price} id={p.id-1} cantidad ={1}/>
       })
       console.log(array)
     return (
@@ -19,6 +19,7 @@ export function Prod() {
     )
   
 }
+
 
 
 

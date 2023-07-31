@@ -1,0 +1,10 @@
+
+.row{
+    
+    color: rgb(239, 67, 67);
+    text-align: center;
+    justify-content: center;
+    margin-top: 3px;
+    border-bottom: 2px black solid;
+}
+

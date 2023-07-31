@@ -1,23 +1,24 @@
 import { useContext } from 'react'
 import {dataContext} from "../Contex/ContextData"
-
+import "./carele.css"
 const Carelementos = () => {
   
     const {carr} = useContext(dataContext);
 
   return carr.map((e)=>{
+    
     return(
-        
-        <div className="card" key={e.id} >
-            <img src={e.img} alt="" />
-            <div className="card-body">
-                <h5 className="card-title">{e.title}</h5>
-                <p className="card-text">{e.description}</p>
-                
-            </div>
-        </div>
+        <>
+              
+                <div className='row m-1'>
+                        <div className='col-2'>{e.cantidad}</div>
+                        <div className='col-6 '>{e.title}</div>
+                        <div className='col-3 '>{e.price}</div>
+
+                </div>
     
-    
+        </>
+     
     )
     })
 }

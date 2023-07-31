@@ -1,7 +1,16 @@
-import React from 'react'
-import {Link} from "react-router-dom"
+
+import {useState} from 'react'
 import "./Header.css"
+import Carelementos from './Carrito/Carelementos'
+import Total from './Carrito/Total'
 function Header() {
+  const[mostrar,setmostrar] = useState(false);
+  const cambio =(event)=>{
+    setmostrar(!mostrar)
+  }
+
+
+
   return (
    
 
@@ -26,10 +35,18 @@ function Header() {
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    <div>
+                    
+                    <button className="botCarrito bg-dark" onClick={cambio} >🛒<span id="contador" className="numCarrito"></span></button>
+                    
+                    <div className='conte-carr'>
+                        
+                          {mostrar && <Carelementos></Carelementos>}
+                          {mostrar && <Total/>}
+                    </div>
+                    </div>
                     </li>
-                    <Link to={"/carrito"}>
-                    <button className="botCarrito bg-dark">🛒<span id="contador" className="numCarrito"></span></button>
-                    </Link>
+                   
                 </ul>
                 </div>
                

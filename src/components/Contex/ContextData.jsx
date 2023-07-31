@@ -6,6 +6,9 @@ const DataProvider = ({children}) =>{
     
     const [productos,setprod]  = useState([]);
     const [carr,setcarr] = useState([]);
+    const [total,settotal] = useState(0);
+    
+
 
     useEffect(()=>{
         fetch("https://fakestoreapi.com/products")
@@ -17,7 +20,7 @@ const DataProvider = ({children}) =>{
     },[]);
 
     return(
-        <dataContext.Provider value={{productos, carr,setcarr}}>
+        <dataContext.Provider value={{productos, carr,setcarr,total,settotal}}>
             {children}
         </dataContext.Provider>
     )
